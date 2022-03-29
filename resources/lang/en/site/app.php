@@ -42,5 +42,14 @@ return [
     'Email' => 'Email',
     'Your Name' => 'Your Name',
     'Submit' => 'Submit',
+    'our_services' => 'Services',
+    'call_us' => 'Call Us',
+    'contact_us_via' => 'Contact Us Via',
+    'request_authentication_service' => 'Request Authentication Service',
+    'request_legal_advice' => 'Request Legal Advice',
     'Phone Number' => 'Phone Number',
+
+    'vision'=>'Vision',
+    'mission'=>'Mission',
+    'values'=>'Values',
 ];

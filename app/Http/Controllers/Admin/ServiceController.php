@@ -56,29 +56,26 @@ class ServiceController extends Controller
      */
     public function store(ServiceRequest $request)
     {
-        try {
+
+//        try {
             $data = [
                 'title' => ['en' => $request->title, 'ar' => $request->title_ar],
-                'notes' => ['en' => $request->notes, 'ar' => $request->notes_ar]
+                'notes' => ['en' => $request->notes, 'ar' => $request->notes_ar],
+                'icon' => $request->icon
             ];
             if ($request->active) {
                 $data['active'] = 1;
             } else {
                 $data['active'] = 0;
             }
-            $file = request()->file('photo');
-
-            if ($file) {
-                $data['photo'] = $this->repo->storeFile($file, 'services');
-            }
 
             $this->repo->create($data);
             session()->flash('Add', 'تم اضافه الخدمه بنجاح ');
             return redirect('Services');
-        } catch (\Exception $e) {
-            return redirect()->back()
-                ->with('error', __('app.some_thing_error'));
-        }
+//        } catch (\Exception $e) {
+//            return redirect()->back()
+//                ->with('error', __('app.some_thing_error'));
+//        }
     }
 
     /**

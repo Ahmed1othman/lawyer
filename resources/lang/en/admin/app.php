@@ -44,7 +44,8 @@ return [
   'control_front' => 'Control Front',
   'contact_us' => 'Contact Us',
   'news' => 'news',
-  'projects' => 'projects',
+  'projects' => 'Projects',
+  'employees' => 'Employees',
   'slider' => 'slider',
   'why_chosse_us' => 'Why Choose US',
   'request_call_back' => 'Request Call Back',
@@ -100,5 +101,7 @@ return [
     'font_url'=>'Font URL',
     'whats_up'=>'ًWhats Up Number',
     'show_logo'=>'ًShow Logo',
+    'add_success'=>'ًAdding Done Successfully',
+    'edit_success'=>'Edit Done Successfully',
 
 ];

@@ -36,6 +36,8 @@
 
                 <li><a href="{{ route('projects.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.projects') }}</a></li>
 
+                <li><a href="{{ route('employees.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.employees') }}</a></li>
+
                 <li><a href="{{ route('news.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.news') }}</a></li>
 
                 <li><a href="{{ route('sliders.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.sliders') }}</a></li>

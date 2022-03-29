@@ -31,11 +31,11 @@ class InfoSeeder extends Seeder
         Info::create(['option' => 'news_image','value' => 'news.png','type' => 'image']);
         Info::create(['option' => 'footer_image','value' => 'footer.png','type' => 'image']);
         Info::create(['option' => 'contact_image','value' => 'contact.png','type' => 'image']);
-        Info::create(['option' => 'email','value' => '','type' => 'string']);
-        Info::create(['option' => 'phone','value' => '','type' => 'string']);
+        Info::create(['option' => 'email','value' => 'email@email.com','type' => 'string']);
+        Info::create(['option' => 'phone','value' => '0100000000','type' => 'string']);
         Info::create(['option' => 'whats_up','value' => '','type' => 'string']);
-        Info::create(['option' => 'address_en','value' => '','type' => 'string']);
-        Info::create(['option' => 'address_ar','value' => '','type' => 'string']);
+        Info::create(['option' => 'address_en','value' => 'Cairo, Egypt','type' => 'string']);
+        Info::create(['option' => 'address_ar','value' => 'القاهرة - مصر','type' => 'string']);
         Info::create(['option' => 'fb_link','value' => '','type' => 'string']);
         Info::create(['option' => 'twitter_link','value' => '','type' => 'string']);
         Info::create(['option' => 'linked_link','value' => '','type' => 'string']);
@@ -43,11 +43,23 @@ class InfoSeeder extends Seeder
         Info::create(['option' => 'snapchat_link','value' => '','type' => 'string']);
         Info::create(['option' => 'youtube_link','value' => '','type' => 'string']);
         Info::create(['option' => 'about_us_en','value' => 'About US bla bla bla bla bla bla bla bla ...','type' => 'text']);
-        Info::create(['option' => 'about_us_ar','value' => 'بلااااابلااااابلااااامن نحن بلااااا ','type' => 'text']);
-        Info::create(['option' => 'main_color','value' => '#05233a','type' => 'color']);
-        Info::create(['option' => 'secondary_color','value' => '#16a086','type' => 'color']);
-        Info::create(['option' => 'main_font_color','value' => '#05233a','type' => 'color']);
-        Info::create(['option' => 'secondary_font_color','value' => '#16a086','type' => 'color']);
+        Info::create(['option' => 'about_us_ar',
+            'value' => 'يعتبر مكتب العيسى للمحاماة والاستشارات القانونية من اول المكاتب الرائدة في مجال المحاماة في المملكة العربية السعودية، قام بتأسيسه الدكتور ابراهيم بن عيسى العيسى في عام 1993م، المحامي والمستشار القانوني المعروف، وهو الذي يملك سجل واسع من الخبرات العلمية والعملية من خلال أكثر من 45 سنة قضاها في مختلف المجالات القانونية. وبدء نشاطه في المحاماة منذ عام 1993م واستمر حتى وقتنا الحالي.
+وبعد ارتباط الدكتور ابراهيم العيسى بعضوية مجلس الشورى، انتقلت إدارة المكتب إلى الدكتور/ محمد العيسى، صاحب الخبرة الواسعة في القوانين المحلية والدولية، فهو يحمل شهادة الدكتوراه في القانون بتخصص التحكيم التجاري الدولي، وكذلك الماجستير في القانون التجاري الدولي من جامعة ايسكس البريطانية، وبدأت خبراته العملية منذ 1998م.','type' => 'text']);
+
+        Info::create(['option' => 'mission_en','value' => 'بلااااابلااااابلااااامن نحن بلااااا ','type' => 'text']);
+        Info::create(['option' => 'mission_ar','value' => 'بلااااابلااااابلااااامن نحن بلااااا ','type' => 'text']);
+
+        Info::create(['option' => 'vision_en','value' => 'بلااااابلااااابلااااامن نحن بلااااا ','type' => 'text']);
+        Info::create(['option' => 'vision_ar','value' => 'بلااااابلااااابلااااامن نحن بلااااا ','type' => 'text']);
+
+        Info::create(['option' => 'values_en','value' => 'بلااااابلااااابلااااامن نحن بلااااا ','type' => 'text']);
+        Info::create(['option' => 'values_ar','value' => 'بلااااابلااااابلااااامن نحن بلااااا ','type' => 'text']);
+
+        Info::create(['option' => 'main_color','value' => '#e0cd1d','type' => 'color']);
+        Info::create(['option' => 'secondary_color','value' => '#e0cd1d','type' => 'color']);
+        Info::create(['option' => 'main_font_color','value' => '#e0cd1d','type' => 'color']);
+        Info::create(['option' => 'secondary_font_color','value' => '#e0cd1d','type' => 'color']);
         Info::create(['option' => 'font_family','value' => '\'Cairo\', sans-serif','type' => 'string']);
         Info::create(['option' => 'font_url','value' => 'https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap','type' => 'string']);
         SliderOption::create(['image' => 'slidingoverlayhorizontal','word' => 'x:right']);

@@ -45,4 +45,15 @@ return [
     'why_choose_us' => 'لماذا تختارنا؟',
     'Leave_your_information' => 'اترك بياناتك والبريد الالكتروني لك. وسوف نتواصل معك في اسرع وقت.',
     'Request A Call Back' => 'تريد منا التواصل معك ؟',
+    'call_us' => 'اتصل بنا',
+    'contact_us_via' => 'نواصل معنا عبر',
+
+    'our_services' => 'خدماتنا',
+    'request_authentication_service' => "طلب خدمة توثيق",
+    'request_legal_advice' => 'طلب استشارة قانونية',
+
+    'vision'=>'الرؤية',
+    'mission'=>'هدفنا',
+    'values'=>'قيمنا',
+
 ];

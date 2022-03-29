@@ -34,7 +34,6 @@ class ServiceRequest extends FormRequest
                         'title_ar' => 'required|string|min:2|max:150|unique:services,title->ar' . $this->id,
                         'notes' => 'required|string|min:2|unique:services,notes->en' . $this->id,
                         'notes_ar' => 'required|string|min:2|unique:services,notes->ar' . $this->id,
-                        'photo' => 'required|image|mimes:jpeg,bmp,png,jpg|max:4096'
                     ];
                 }
             case 'PATCH':
@@ -44,7 +43,6 @@ class ServiceRequest extends FormRequest
                         'title_ar' => 'required|string|min:2|max:150|unique:services,title->ar' . $this->id,
                         'notes' => 'required|string|min:2|unique:services,notes->en' . $this->id,
                         'notes_ar' => 'required|string|min:2|unique:services,notes->ar' . $this->id,
-                        'photo' => 'sometimes|image|mimes:jpeg,bmp,png,jpg|max:4096'
                     ];
                 }
             default:
@@ -86,11 +84,6 @@ class ServiceRequest extends FormRequest
             'notes_ar.regex' => __('validation.regex'),
             'notes_ar.unique' => __('validation.unique'),
 
-
-            'photo.required' => __('validation.required'),
-            'photo.image' => __('validation.image'),
-            'photo.mimes' => __('validation.mimes'),
-            'photo.max' => __('validation.max'),
 
 
         ];

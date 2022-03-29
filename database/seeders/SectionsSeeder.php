@@ -21,6 +21,7 @@ class SectionsSeeder extends Seeder
         ActiveSection::create(['section_name' => 'services']);
         ActiveSection::create(['section_name' => 'news']);
         ActiveSection::create(['section_name' => 'projects']);
+        ActiveSection::create(['section_name' => 'employees']);
         ActiveSection::create(['section_name' => 'slider']);
         ActiveSection::create(['section_name' => 'why_chosse_us']);
         ActiveSection::create(['section_name' => 'request_call_back']);

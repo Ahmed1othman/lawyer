@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Repositories\Eloquent\projectsRepo;
-use App\Http\Requests\Admin\projectsRequest;
+use App\Http\Repositories\Eloquent\EmployeeRepo;
+use App\Http\Requests\Admin\EmployeeRequest;
 use App\Models\project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File as FacadesFile;
@@ -13,7 +13,7 @@ class ProjectsController extends Controller
 {
     protected $repo;
 
-    public function __construct(projectsRepo $repo)
+    public function __construct(EmployeeRepo $repo)
     {
 
         $this->repo = $repo;
@@ -50,7 +50,7 @@ class ProjectsController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(projectsRequest $request)
+    public function store(EmployeeRequest $request)
     {
         try {
             $data = [
@@ -113,7 +113,7 @@ class ProjectsController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(projectsRequest $request, $id)
+    public function update(EmployeeRequest $request, $id)
     {
         $item = $this->repo->findOrFail($request->id);
         try {

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CustomController;
+use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\featuresController;
 use App\Http\Controllers\Admin\FrontSectionController;
 use App\Http\Controllers\Admin\HomeController;
@@ -55,6 +56,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['au
     Route::post('restor-Services/{id}', [ServiceController::class,'restor'])->name('restor-service');
     Route::post('restor-features/{id}', [FeaturesController::class,'restor'])->name('restor-features');
     Route::post('restor-projects/{id}', [ProjectsController::class,'restor'])->name('restor-projects');
+    Route::post('restor-employees/{id}', [EmployeeController::class,'restor'])->name('restor-employees');
     Route::post('restor-news/{id}', [newsController::class,'restor'])->name('restor-news');
 
     ###################### End Routes Restore ######################
@@ -84,6 +86,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['au
     Route::resource('projects', ProjectsController::class);
     Route::get('deleted-project', [ProjectsController::class,'deletedProject'])->name('project-deleted');
     ###################### End Routes resource projects ######################
+
+    ####################### Start Routes resource employees ######################
+    Route::resource('employees', EmployeeController::class);
+    Route::get('deleted-employee', [EmployeeController::class,'deletedEmployee'])->name('employee-deleted');
+    ###################### End Routes resource employees ######################
 
     ####################### Start Routes page-sections ######################
     Route::resource('page-sections', PageSectionController::class)->except('index','show');

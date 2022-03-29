@@ -10,9 +10,6 @@
 <script src='{{ asset('website/js/masonry.pkgd.min.js')}}'></script>
 <script src='{{ asset('website/js/owl.carousel.min.js')}}'></script>
 <script src="{{ asset('website/js/jquery.magnific-popup.min.js')}}"></script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrDf32aQTCVENBhFJbMBKOUTiUAABtC2o"></script>
-<script src="{{ asset('website/js/jquery.googlemap.js')}}"></script>
 <script src="{{ asset('website/js/validator.js')}}"></script>
 <script src="{{ asset('website/js/main.js')}}"></script>
 

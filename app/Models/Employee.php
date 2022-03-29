@@ -7,21 +7,25 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Translatable\HasTranslations;
 
-class Service extends Model
+class Employee extends Model
 {
     use HasFactory;
     use SoftDeletes;
     use HasTranslations;
 
+    public $translatable = ['title','name'];
     protected $fillable = [
         'title',
-        'notes',
+        'name',
         'photo',
         'active',
-        'icon',
     ];
 
-    public $translatable = ['title', 'notes'];
+    public $appends=['image'];
 
 
+    public function getImageAttribute()
+    {
+        return $this->attributes['photo'] != null ? asset('storage/employees/'.$this->attributes['photo'] ) : null;
+    }
 }

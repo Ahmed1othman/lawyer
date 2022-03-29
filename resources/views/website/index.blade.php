@@ -10,11 +10,11 @@
             <header id="site_header" class="header mobile-menu-hide">
                 <div class="header-content">
                     <div class="header-photo">
-                        <img src="{{asset('website/img/main_photo.jpg')}}" alt="Alex Smith">
+                        <img src="{{asset('website/img/main_photo.jpg')}}" alt="عبد الله المنصور">
                     </div>
                     <div class="header-titles">
                         <h2>عبدالله المنصور الشهراني</h2>
-                        <h4>محامي دولي</h4>
+                        <h4>موثق ومستشار قانوني</h4>
                     </div>
                 </div>
 
@@ -22,14 +22,21 @@
 
                 <div class="social-links">
                     <ul>
-                        <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        @if(websiteInfo_hlp('linked_link'))
+                            <li><a href="{{websiteInfo_hlp('linked_link')}}" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                        @endif
+                        @if(websiteInfo_hlp('fb_link'))
+                            <li><a href="{{websiteInfo_hlp('fb_link')}}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        @endif
+                        @if(websiteInfo_hlp('twitter_link'))
+                            <li><a href="{{websiteInfo_hlp('twitter_link')}}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        @endif
                     </ul>
                 </div>
 
                 <div class="header-buttons">
-                    <a href="#" target="_blank" class="btn btn-primary"></a>
+                    <a href="https://api.whatsapp.com/send?phone={{ websiteInfo_hlp('whats_up') }}" target="_blank" class="btn btn-primary col-md-9"><i class="fab fa-whatsapp custom-icon"></i>  {{__('site/app.contact_us_via')}}</a>
+                    <a href="tel:{{ websiteInfo_hlp('phone') }}" target="_blank" class="btn btn-primary col-md-9"><i class="fa fa-phone custom-icon"></i>  {{__('site/app.call_us')}}</a>
                 </div>
 
                 @if(App::getLocale()=='en')
