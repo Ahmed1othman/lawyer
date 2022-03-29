@@ -12,4 +12,11 @@
 <script src="{{ asset('website/js/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{ asset('website/js/validator.js')}}"></script>
 <script src="{{ asset('website/js/main.js')}}"></script>
-
+<script src="{{ asset('website/plugins/notifications/js/lobibox.min.js') }}"></script>
+<script src="{{ asset('website/plugins/notifications/js/notifications.min.js') }}"></script>
+<script src="{{ asset('website/plugins/notifications/js/notification-custom-script.js') }}"></script>
+<script>
+    var app_url = "{{url('/')}}";
+    var lang = "{{app()->getLocale()}}";
+</script>
+<script src="{{ asset('website/js/front.js')}}"></script>

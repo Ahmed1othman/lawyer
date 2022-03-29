@@ -18,14 +18,14 @@
                         <div class="fields clearfix">
                             <div class="left-column">
                                 <div class="form-group form-group-with-icon">
-                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="" required="required" data-error="{{__('site/app.name_is_required')}}">
+                                    <input type="text" id="contact_name" name="name" class="form-control" placeholder="" required="required" data-error="{{__('site/app.name_is_required')}}">
                                     <label>{{__('site/app.full_name')}}</label>
                                     <div class="form-control-border"></div>
                                     <div class="help-block with-errors"></div>
                                 </div>
 
                                 <div class="form-group form-group-with-icon">
-                                    <input id="form_email" type="email" name="email" class="form-control" placeholder="" required="required" data-error="{{__('site/app.valid_email_is_required')}}">
+                                    <input type="email" id="contact_email" name="email" class="form-control" placeholder="" required="required" data-error="{{__('site/app.valid_email_is_required')}}">
                                     <label>{{__('site/app.email')}}</label>
                                     <div class="form-control-border"></div>
                                     <div class="help-block with-errors"></div>
@@ -37,10 +37,17 @@
                                     <div class="form-control-border"></div>
                                     <div class="help-block with-errors"></div>
                                 </div>
+
+                                <div class="form-group form-group-with-icon">
+                                    <input type="number" id="contact_phone" name="phone" class="form-control" placeholder="" required="required" data-error="{{__('site/app.phone_is_required')}}">
+                                    <label>{{__('site/app.phone')}}</label>
+                                    <div class="form-control-border"></div>
+                                    <div class="help-block with-errors"></div>
+                                </div>
                             </div>
                             <div class="right-column">
                                 <div class="form-group form-group-with-icon">
-                                    <textarea id="form_message" name="message" class="form-control" placeholder="" rows="7" required="required" data-error="{{__('site/app.please_leave_me_a_message')}}"></textarea>
+                                    <textarea name="msg" id="contact_msg" class="form-control" placeholder="" rows="10" required="required" data-error="{{__('site/app.please_leave_me_a_message')}}"></textarea>
                                     <label>{{__('site/app.message')}}</label>
                                     <div class="form-control-border"></div>
                                     <div class="help-block with-errors"></div>
