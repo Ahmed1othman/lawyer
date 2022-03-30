@@ -19,6 +19,13 @@
         </a>
     </li>
 
+    <li>
+            <a href="#documentation" class="nav-anim">
+                <span class="menu-icon lnr lnr-book"></span>
+                <span class="link-text">{{__('site/app.documentation')}}</span>
+            </a>
+        </li>
+
 
 
 

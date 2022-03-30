@@ -7,4 +7,6 @@ return [
     'email' => 'Email',
     'phone' => 'Phone',
     'Action' => 'Action',
+    'msg' => 'Message',
+    'service_type' => 'Service Type',
 ];

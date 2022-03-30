@@ -104,4 +104,29 @@ return [
     'add_success'=>'ًAdding Done Successfully',
     'edit_success'=>'Edit Done Successfully',
 
+
+    'main_background' => 'Main Background',
+    'portfolio_pdf' => 'Brochure',
+    'contact_image' => 'خلفية صفحة اتصل بنا',
+
+    'address' => 'address',
+
+
+
+    'vision_en'=>'Vision by English',
+    'vision_ar'=>'Vision By Arabic',
+
+    'mission_en'=>'Mission by English',
+    'mission_ar'=>'Mission by Arabic',
+
+    'values_en'=>'Values by English',
+    'values_ar'=>'Values by Arabic',
+
+    'documentation_en'=>'Documentation by English',
+    'documentation_ar'=>'Documentation by Arabic',
+
+
+
+
+
 ];

@@ -30,20 +30,20 @@
             <ul>
                 <li><a href="{{ route('Services.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.services') }}</a></li>
 
-                <li><a href="{{ route('features.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.features') }}</a></li>
+{{--                <li><a href="{{ route('features.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.features') }}</a></li>--}}
 
                 <li><a href="{{ route('AllOrders') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.orders') }}</a></li>
 
-                <li><a href="{{ route('projects.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.projects') }}</a></li>
+{{--                <li><a href="{{ route('projects.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.projects') }}</a></li>--}}
 
-                <li><a href="{{ route('employees.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.employees') }}</a></li>
+                <li><a href="{{ route('employees.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/employees.employees') }}</a></li>
 
-                <li><a href="{{ route('news.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.news') }}</a></li>
+{{--                <li><a href="{{ route('news.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.news') }}</a></li>--}}
 
-                <li><a href="{{ route('sliders.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.sliders') }}</a></li>
+{{--                <li><a href="{{ route('sliders.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.sliders') }}</a></li>--}}
 
-                <li><a href="{{ route('navbar.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.navbar') }}</a></li>
-                <li><a href="{{ route('subscription.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.sbscriptions') }}</a></li>
+{{--                <li><a href="{{ route('navbar.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.navbar') }}</a></li>--}}
+{{--                <li><a href="{{ route('subscription.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.sbscriptions') }}</a></li>--}}
                 <li><a href="{{ route('contacts') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.contacts') }}</a></li>
             </ul>
         </li>
@@ -57,9 +57,9 @@
             <ul>
 
                 <li><a href="{{ route('info.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.website_info') }}</a></li>
-                <li><a href="{{ route('slider-option') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.slider-option') }}</a></li>
-                <li><a href="{{ route('front-sections.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.control_front') }} </a></li>
-                <li><a href="{{ route('custom-page.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.custom_page') }} </a></li>
+{{--                <li><a href="{{ route('slider-option') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.slider-option') }}</a></li>--}}
+{{--                <li><a href="{{ route('front-sections.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.control_front') }} </a></li>--}}
+{{--                <li><a href="{{ route('custom-page.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.custom_page') }} </a></li>--}}
 
             </ul>
         </li>
@@ -75,11 +75,11 @@
 
                 <li><a href="{{ route('services-deleted') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.services') }}</a></li>
 
-                <li><a href="{{ route('feature-deleted') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.features') }}</a></li>
+{{--                <li><a href="{{ route('feature-deleted') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.features') }}</a></li>--}}
 
-                <li><a href="{{ route('project-deleted') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.projects') }}</a></li>
+{{--                <li><a href="{{ route('project-deleted') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.projects') }}</a></li>--}}
 
-                <li><a href="{{ route('news-deleted') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.news') }}</a></li>
+{{--                <li><a href="{{ route('news-deleted') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.news') }}</a></li>--}}
 
             </ul>
         </li>

@@ -13,5 +13,8 @@ class order extends Model
         'name',
         'email',
         'phone',
+        'type',
+        'Subject',
+        'msg',
     ];
 }

@@ -31,25 +31,35 @@ function submitSubscription() {
         });
 
     } else {
-        round_error_noti('You Nead To Enter Correct Email')
+        round_error_noti('You Need To Enter Correct Email')
 
     }
 
 
 }
 
-function request_call() {
-    var call_email = document.getElementById("call_email");
-    var call_name = document.getElementById("call_name");
-    var call_phone = document.getElementById("call_phone");
+function request_service() {
+    var contact_email = document.getElementById("contact_email");
+    var contact_name = document.getElementById("contact_name");
+    var contact_phone = document.getElementById("contact_phone");
+    var contact_msg = document.getElementById("contact_msg");
+    var contact_type = document.getElementById("contact_type");
     const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (re.test(call_email.value)) {
-        if (call_name.value === '') {
-            round_error_noti('You Nead To Enter Name')
+    if (re.test(contact_email.value)) {
+        if (contact_name.value === '') {
+            round_error_noti('You Need To Enter Name')
             return;
         }
-        if (call_phone.value === '') {
-            round_error_noti('You Nead To Enter Phone')
+        if (contact_phone.value === '') {
+            round_error_noti('You Need To Enter Phone')
+            return;
+        }
+         if (contact_msg.value === '') {
+            round_error_noti('You Need To Enter message')
+            return;
+        }
+         if (contact_type.value === '') {
+            round_error_noti('You Need To Enter service type')
             return;
         }
         $.ajax({
@@ -60,9 +70,11 @@ function request_call() {
             type: 'POST',
             data: {
                 _token: $('meta[name="csrf-token"]').attr('content'),
-                email: call_email.value,
-                name: call_name.value,
-                phone: call_phone.value
+                email: contact_email.value,
+                name: contact_name.value,
+                msg: contact_msg.value,
+                type: contact_type.value,
+                phone: contact_phone.value
             },
             async: false,
             success: function(data) {
@@ -71,6 +83,11 @@ function request_call() {
                     round_error_noti(obj.msg)
                 } else {
                     round_success_noti(obj.msg)
+                    contact_email.value = '';
+                    contact_name.value = '';
+                    contact_phone.value = '';
+                    contact_msg.value = '';
+                    contact_type.value = '';
                 }
             },
             error: function(error) {
@@ -80,7 +97,7 @@ function request_call() {
         });
 
     } else {
-        round_error_noti('You Nead To Enter Correct Email')
+        round_error_noti('You Need To Enter Correct Email')
 
     }
 
@@ -88,24 +105,29 @@ function request_call() {
 }
 
 function submitContactUs() {
-    alert('ddd')
     var contact_email = document.getElementById("contact_email");
     var contact_name = document.getElementById("contact_name");
     var contact_phone = document.getElementById("contact_phone");
     var contact_msg = document.getElementById("contact_msg");
+    var contact_subject = document.getElementById("contact_subject");
+
 
     const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (re.test(contact_email.value)) {
         if (contact_name.value === '') {
-            round_error_noti('You Nead To Enter Name')
+            round_error_noti('You Need To Enter Name')
             return;
         }
         if (contact_phone.value === '') {
-            round_error_noti('You Nead To Enter Phone')
+            round_error_noti('You Need To Enter Phone')
             return;
         }
         if (contact_msg.value === '') {
-            round_error_noti('You Nead To Enter Phone')
+            round_error_noti('You Need To Enter Phone')
+            return;
+        }
+        if (contact_subject.value === '') {
+            round_error_noti('You Need To Enter Phone')
             return;
         }
         $.ajax({
@@ -119,7 +141,8 @@ function submitContactUs() {
                 email: contact_email.value,
                 name: contact_name.value,
                 phone: contact_phone.value,
-                msg: contact_msg.value
+                msg: contact_msg.value,
+                subject: contact_subject.value
             },
             async: false,
             success: function(data) {
@@ -128,6 +151,11 @@ function submitContactUs() {
                     round_error_noti(obj.msg)
                 } else {
                     round_success_noti(obj.msg)
+                    contact_email.value = '';
+                    contact_name.value = '';
+                    contact_phone.value = '';
+                    contact_msg.value = '';
+                    contact_subject.value = '';
                 }
             },
             error: function(error) {
@@ -137,9 +165,79 @@ function submitContactUs() {
         });
 
     } else {
-        round_error_noti('You Nead To Enter Correct Email')
+        round_error_noti('You Need To Enter Correct Email')
 
     }
 
 
 }
+
+
+function submitDocumentation() {
+    var contact_email = document.getElementById("contact_email");
+    var contact_name = document.getElementById("contact_name");
+    var contact_phone = document.getElementById("contact_phone");
+    var contact_msg = document.getElementById("contact_msg");
+    var contact_type = document.getElementById("contact_type");
+
+
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (re.test(contact_email.value)) {
+        if (contact_name.value === '') {
+            round_error_noti('You Need To Enter Name')
+            return;
+        }
+        if (contact_phone.value === '') {
+            round_error_noti('You Need To Enter Phone')
+            return;
+        }
+        if (contact_msg.value === '') {
+            round_error_noti('You Need To Enter Phone')
+            return;
+        }
+        if (contact_type.value === '') {
+            round_error_noti('You Need To Enter type')
+            return;
+        }
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: app_url + "/" + lang + "/contactus",
+            type: 'POST',
+            data: {
+                _token: $('meta[name="csrf-token"]').attr('content'),
+                email: contact_email.value,
+                name: contact_name.value,
+                phone: contact_phone.value,
+                msg: contact_msg.value,
+                type: contact_type.value
+            },
+            async: false,
+            success: function(data) {
+                var obj = JSON.parse(data);
+                if (obj.code === 0) {
+                    round_error_noti(obj.msg)
+                } else {
+                    round_success_noti(obj.msg)
+                    contact_email.value = '';
+                    contact_name.value = '';
+                    contact_phone.value = '';
+                    contact_msg.value = '';
+                    contact_subject.value = '';
+                }
+            },
+            error: function(error) {
+                round_error_noti()
+
+            }
+        });
+
+    } else {
+        round_error_noti('You Need To Enter Correct Email')
+
+    }
+
+
+}
+

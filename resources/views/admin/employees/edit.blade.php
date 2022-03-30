@@ -18,7 +18,7 @@
                     <div class="row">
 
                         <div class="col">
-                            <label class="mb-2">{{trans('admin/services.employee_title')}}</label>
+                            <label class="mb-2">{{trans('admin/employees.title')}}</label>
                             <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" value="{{ $data->getTranslation('title', 'en') }}">
                             @error('title')
                             <div class="alert alert-danger">{{$Message}}</div>
@@ -27,7 +27,7 @@
 
 
                         <div class="col">
-                            <label class="mb-2">{{trans('admin/services.employee_title_ar')}}</label>
+                            <label class="mb-2">{{trans('admin/employees.title_ar')}}</label>
                             <input type="text" name="title_ar" class="form-control @error('title_ar') is-invalid @enderror" value="{{ $data->getTranslation('title', 'ar') }}">
                             @error('title_ar')
                             <div class="alert alert-danger">{{$Message}}</div>
@@ -42,7 +42,7 @@
 
                     <div class="row">
                         <div class="col">
-                            <label class="mb-2">{{ trans('admin/services.employee_name') }}</label>
+                            <label class="mb-2">{{ trans('admin/employees.employee_name') }}</label>
                             <input class="form-control" value="{{ $data->getTranslation('name', 'en') }}"  rows="5" name="name">
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                     <br>
                     <div class="row">
                         <div class="col">
-                            <label class="mb-2">{{ trans('admin/services.employee_name_ar') }}</label>
+                            <label class="mb-2">{{ trans('admin/employees.employee_name_ar') }}</label>
                             <input class="form-control" value="{{ $data->getTranslation('name', 'ar') }}" rows="5" name="name_ar">
                         </div>
                     </div>

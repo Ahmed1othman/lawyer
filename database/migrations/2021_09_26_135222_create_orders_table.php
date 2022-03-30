@@ -18,6 +18,8 @@ class CreateOrdersTable extends Migration
             $table->string('name', 50);
             $table->string('email')->unique();
             $table->string('phone', 15)->unique();
+            $table->string('type')->nullable();
+            $table->longText('msg');
             $table->timestamps();
         });
     }

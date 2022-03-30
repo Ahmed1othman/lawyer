@@ -17,6 +17,7 @@ class CreateContactUsTable extends Migration
             $table->id();
             $table->string('name', 50);
             $table->string('email')->unique();
+            $table->string('subject')->nullable();
             $table->string('phone', 15)->unique();
             $table->longText('msg');
             $table->softDeletes();

@@ -1,6 +1,6 @@
 <section data-id="contact" class="animated-section">
     <div class="page-title">
-        <h2>Contact</h2>
+        <h2>{{__('site/app.To contact and request legal advice')}}</h2>
     </div>
 
     <div class="section-content">
@@ -32,7 +32,7 @@
                                 </div>
 
                                 <div class="form-group form-group-with-icon">
-                                    <input id="form_subject" type="text" name="subject" class="form-control" placeholder="" required="required" data-error="{{__('site/app.subject_is_required')}}">
+                                    <input id="contact_subject" type="text" name="subject" class="form-control" placeholder="" required="required" data-error="{{__('site/app.subject_is_required')}}">
                                     <label>{{__('site/app.subject')}}</label>
                                     <div class="form-control-border"></div>
                                     <div class="help-block with-errors"></div>
@@ -55,7 +55,7 @@
                             </div>
                         </div>
 
-                        <button type="button" onclick="submitContactUs()" class="button btn-send col-12">{{__('app.send_message')}}</button>
+                        <button type="button" onclick="submitContactUs()" class="button btn-send col-12">{{__('site/app.send_message')}}</button>
                     </div>
                 </form>
             </div>
@@ -65,27 +65,23 @@
         <div class="row justify-content-around">
             <!-- Contact Info -->
                 <div class="lm-info-block gray-default col-3">
-                    <i class="lnr lnr-map-marker"></i>
-                    <h4>{{websiteInfo_hlp('address_'.App::getLocale())}}</h4>
-                    <span class="lm-info-block-value"></span>
-                    <span class="lm-info-block-text"></span>
-                </div>
-
-                <div class="lm-info-block gray-default col-3">
                     <i class="lnr lnr-phone-handset"></i>
-                    <h4><a style="color: #e9e9e9"  href="tel:{{websiteInfo_hlp('phone')}}" target="_blank">{{websiteInfo_hlp('phone')}}</a></h4>
+                    <h4><a style="color: #e9e9e9" href="tel:{{websiteInfo_hlp('phone')}}" target="_blank">{{websiteInfo_hlp('phone')}}</a></h4>
                     <span class="lm-info-block-value"></span>
                     <span class="lm-info-block-text"></span>
                 </div>
-
                 <div class="lm-info-block gray-default col-3">
                     <i class="lnr lnr-envelope"></i>
-                    <h4><a style="color: #e9e9e9" href="mailto: {{websiteInfo_hlp('email')}}" target="_blank">{{websiteInfo_hlp('email')}}</h4>
+                    <h4><a style="color: #e9e9e9" href="mailto: {{websiteInfo_hlp('email')}}" target="_blank">{{websiteInfo_hlp('email')}}</a></h4>
                     <span class="lm-info-block-value"></span>
                     <span class="lm-info-block-text"></span>
                 </div>
-            <!-- End of Contact Info -->
+                <div class="lm-info-block gray-default col-3">
+                <i class="lnr lnr-phone-handset"></i>
+                <h4>{{websiteInfo_hlp('address_'.App::getLocale())}}</h4>
+                <span class="lm-info-block-value"></span>
+                <span class="lm-info-block-text"></span>
+            </div>
         </div>
-
     </div>
 </section>

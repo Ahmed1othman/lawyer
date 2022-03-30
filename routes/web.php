@@ -65,6 +65,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::post('/contactus', [HomeController::class, 'contactus'])->name('contactusstore');
     ################## End Route Get contactus ###########################
 
+
     Route::get('/site-services',[HomeController::class , 'siteservices' ])->name('siteservices');
     Route::get('/service-details/{id}',[HomeController::class , 'serviceDetails' ])->name('service.details');
 

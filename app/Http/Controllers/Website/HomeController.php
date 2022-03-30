@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Website;
 use App\Http\Controllers\Controller;
 use App\Models\ContactUs;
 use App\Models\Custom;
+use App\Models\Employee;
 use App\Models\feature;
 use App\Models\news;
 use App\Models\order;
@@ -38,7 +39,8 @@ class HomeController extends Controller
         }
         $date = [
             'slideroption' => $slideroption,
-            'services' => Service::whereActive(1)->orderByDesc('id')->limit(3)->get(),
+            'services' => Service::whereActive(1)->orderByDesc('id')->get(),
+            'employees' => Employee::whereActive(1)->orderByDesc('id')->get(),
             'sliders' => Slider::whereActive(1)->orderByDesc('id')->limit(3)->get(),
             'features' => feature::whereActive(1)->orderByDesc('id')->limit(3)->get(),
             'projects' => project::whereActive(1)->orderByDesc('id')->limit(3)->get(),
@@ -95,6 +97,8 @@ class HomeController extends Controller
             $orders = new order();
             $orders->name = $request->name;
             $orders->email = $request->email;
+            $orders->type = $request->type;
+            $orders->msg = $request->msg;
             $orders->phone = $request->phone;
             $data = $orders->save();
             if ($data) {
@@ -110,7 +114,6 @@ class HomeController extends Controller
         }
 
     }
-
     public function contactus(Request $request)
     {
 
@@ -120,6 +123,7 @@ class HomeController extends Controller
             $orders->email = $request->email;
             $orders->phone = $request->phone;
             $orders->msg = $request->msg;
+            $orders->subject = $request->subject;
             $data = $orders->save();
             if ($data) {
                 $response = ['code' => 1, 'msg' => __('admin/app.your_data_send_successfully')];

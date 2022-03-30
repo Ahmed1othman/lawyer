@@ -16,6 +16,8 @@
                                 <th>{{trans('admin/orders.name')}}</th>
                                 <th>{{trans('admin/orders.email')}}</th>
                                 <th>{{trans('admin/orders.phone')}}</th>
+                                <th>{{trans('admin/orders.service_type')}}</th>
+                                <th>{{trans('admin/orders.msg')}}</th>
                                 <th>{{trans('admin/orders.Action')}}</th>
                             </tr>
                             </thead>
@@ -26,6 +28,8 @@
                                     <td>{{$row->name}}</td>
                                     <td>{{$row->email}}</td>
                                     <td>{{$row->phone}}</td>
+                                    <td>{{$row->type}}</td>
+                                    <td>{{$row->msg}}</td>
                                     <td>
                                         <form action="{{route('deletedOrders')}}" method="post">
                                             @csrf
