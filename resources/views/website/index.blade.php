@@ -13,7 +13,7 @@
                         <img src="{{asset('website/img/main_photo.jpg')}}" alt="عبد الله المنصور">
                     </div>
                     <div class="header-titles">
-                        <h2>{{__('site/app.Abdullah Al-Mansour Al-Shahrani')}}</h2>
+                        <h3>{{__('site/app.Abdullah Al-Mansour Al-Shahrani')}}</h3>
                         <h4>{{__('site/app.documenter and legal advisor')}}</h4>
                     </div>
                 </div>
