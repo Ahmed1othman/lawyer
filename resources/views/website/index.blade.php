@@ -41,8 +41,20 @@
                 </div>
 
                 <div class="header-buttons">
-                    <a href="https://api.whatsapp.com/send?phone={{ websiteInfo_hlp('whats_up') }}" target="_blank" class="btn btn-primary col-md-9"><i class="fab fa-whatsapp custom-icon"></i>  {{__('site/app.contact_us_via')}}</a>
-                    <a href="tel:{{ websiteInfo_hlp('phone') }}" target="_blank" class="btn btn-primary col-md-9"><i class="fa fa-phone custom-icon"></i>  {{__('site/app.call_us')}}</a>
+                    <a href="https://api.whatsapp.com/send?phone={{ websiteInfo_hlp('whats_up') }}" target="_blank" class="btn btn-primary col-md-10"><i class="fab fa-whatsapp custom-icon"></i> {{__('site/app.contact_us_via')}}</a>
+                    <a href="tel:{{ websiteInfo_hlp('phone') }}" target="_blank" class="btn btn-primary col-md-10"><i class="fa fa-phone custom-icon"></i> {{__('site/app.call_us')}}</a>
+
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        @if(LaravelLocalization::getCurrentLocaleNative()!=$properties['native'] )
+                        <a rel="alternate" class="btn btn-primary col-md-5" style="" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            {{ $properties['native'] }}
+                        </a>
+
+                        @endif
+                    @endforeach
+                        <a class="btn btn-primary col-md-5"  href="">
+                            {{__('Dark')}}
+                        </a>
                 </div>
 
                 @if(App::getLocale()=='en')
