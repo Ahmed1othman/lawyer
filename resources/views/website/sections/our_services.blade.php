@@ -103,7 +103,7 @@
                 <div class="fun-fact gray-default">
                     <i class="lnr lnr-heart"></i>
                     <h4>{{__('site/app.our_clients')}}</h4>
-                    <span class="fun-fact-block-value">578</span>
+                    <span class="fun-fact-block-value">{{\App\Models\Client::count()}}</span>
                     <span class="fun-fact-block-text"></span>
                 </div>
             </div>
@@ -121,12 +121,12 @@
                 <div class="fun-fact gray-default">
                     <i class="lnr lnr-star"></i>
                     <h4>{{__('site/app.visitors')}}</h4>
-                    <span class="fun-fact-block-value">250</span>
+                    <span class="fun-fact-block-value">{{\App\Models\Visitor::count()}}</span>
                     <span class="fun-fact-block-text"></span>
                 </div>
             </div>
         </div>
         <!-- End of Fun Facts -->
-
+    </div>
     </div>
 </section>
