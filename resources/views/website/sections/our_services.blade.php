@@ -73,50 +73,13 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12">
                 <div class="clients owl-carousel">
+                    @foreach($clients as $client)
+                        <div class="client-block" style="height: 180px; width: 180px">
+                            <img src="{{asset($client->image)}}" class="img-responsive img-thumbnail" style="padding: 3px;border: solid 2px rgb(101 101 101);border-radius: 5%; height: 100%; width: 100%; filter: grayscale(40%);" alt="{{$client->name}}">
+                        </div>
+                    @endforeach
 
-                    <div class="client-block">
-                        <a href="#" target="_blank" title="Logo">
-                            <img src="{{asset('website/img/clients/client-1.png')}}" alt="Logo">
-                        </a>
-                    </div>
-
-                    <div class="client-block">
-                        <a href="#" target="_blank" title="Logo">
-                            <img src="{{asset('website/img/clients/client-2.png')}}" alt="Logo">
-                        </a>
-                    </div>
-
-                    <div class="client-block">
-                        <a href="#" target="_blank" title="Logo">
-                            <img src="{{asset('website/img/clients/client-3.png')}}" alt="Logo">
-                        </a>
-                    </div>
-
-                    <div class="client-block">
-                        <a href="#" target="_blank" title="Logo">
-                            <img src="{{asset('website/img/clients/client-4.png')}}" alt="Logo">
-                        </a>
-                    </div>
-
-                    <div class="client-block">
-                        <a href="#" target="_blank" title="Logo">
-                            <img src="{{asset('website/img/clients/client-5.png')}}" alt="Logo">
-                        </a>
-                    </div>
-
-                    <div class="client-block">
-                        <a href="#" target="_blank" title="Logo">
-                            <img src="{{asset('website/img/clients/client-6.png')}}" alt="Logo">
-                        </a>
-                    </div>
-
-                    <div class="client-block">
-                        <a href="#" target="_blank" title="Logo">
-                            <img src="{{asset('website/img/clients/client-7.png')}}" alt="Logo">
-                        </a>
-                    </div>
-
-                </div>
+                </di
             </div>
         </div>
         <!-- End of Clients -->

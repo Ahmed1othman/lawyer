@@ -105,9 +105,12 @@
 </script>
 
 <script src="{{asset('admin/assets/js/coloris.min.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
 <!--app JS-->
 <style>
     .clr-field{
         width: 100% !important;
     }
 </style>
+@stack('js')

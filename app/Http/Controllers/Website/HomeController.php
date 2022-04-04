@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
+use App\Models\Client;
 use App\Models\ContactUs;
 use App\Models\Custom;
 use App\Models\Employee;
@@ -38,13 +39,14 @@ class HomeController extends Controller
 
         }
         $date = [
-            'slideroption' => $slideroption,
+//            'slideroption' => $slideroption,
             'services' => Service::whereActive(1)->orderByDesc('id')->get(),
             'employees' => Employee::whereActive(1)->orderByDesc('id')->get(),
-            'sliders' => Slider::whereActive(1)->orderByDesc('id')->limit(3)->get(),
-            'features' => feature::whereActive(1)->orderByDesc('id')->limit(3)->get(),
-            'projects' => project::whereActive(1)->orderByDesc('id')->limit(3)->get(),
-            'news' => news::whereActive(1)->orderByDesc('id')->limit(3)->get(),
+            'clients' => Client::orderByDesc('id')->get(),
+//            'sliders' => Slider::whereActive(1)->orderByDesc('id')->limit(3)->get(),
+//            'features' => feature::whereActive(1)->orderByDesc('id')->limit(3)->get(),
+//            'projects' => project::whereActive(1)->orderByDesc('id')->limit(3)->get(),
+//            'news' => news::whereActive(1)->orderByDesc('id')->limit(3)->get(),
         ];
 
         return view('website.index', $date);

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CustomController;
 use App\Http\Controllers\Admin\EmployeeController;
+use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\featuresController;
 use App\Http\Controllers\Admin\FrontSectionController;
 use App\Http\Controllers\Admin\HomeController;
@@ -54,7 +55,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['au
     ###################### Start Routes Restore  ######################
 
     Route::post('restor-Services/{id}', [ServiceController::class,'restor'])->name('restor-service');
-    Route::post('restor-features/{id}', [FeaturesController::class,'restor'])->name('restor-features');
+    Route::post('restor-features/{id}', [ClientController::class,'restor'])->name('restor-features');
     Route::post('restor-projects/{id}', [ProjectsController::class,'restor'])->name('restor-projects');
     Route::post('restor-employees/{id}', [EmployeeController::class,'restor'])->name('restor-employees');
     Route::post('restor-news/{id}', [newsController::class,'restor'])->name('restor-news');
@@ -79,7 +80,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['au
 
     ####################### Start Routes resource features ######################
     Route::resource('features', featuresController::class);
-    Route::get('deleted-feature', [featuresController::class,'deletedFeature'])->name('feature-deleted');
+    Route::get('deleted-feature', [featuresController::class,'deletedFeature'])->name('client-deleted');
+    ###################### End Routes resource features ######################
+
+    ####################### Start Routes resource clients ######################
+    Route::resource('clients', ClientController::class);
+    Route::get('deleted-clients', [ClientController::class,'deletedClient'])->name('feature-deleted');
     ###################### End Routes resource features ######################
 
     ####################### Start Routes resource projects ######################

@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\ContactUs;
 use App\Models\order;
 use App\Models\SliderOption;
+use App\Models\Visitor;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 
 class HomeController extends Controller
@@ -19,7 +21,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $data['visitors'] = $this->visitors();
+        return view('admin.index',$data);
     }
 
     public function AllOrders()
@@ -92,75 +95,19 @@ class HomeController extends Controller
             $data=['word'=>'x:left','image'=>'slidingoverlayhorizontal'];
 
             SliderOption::create($data);
-            
+
             return response()->json($data, 200);
         }
     }
 
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function visitors(){
+        $start = date('Y-m-d', strtotime(Carbon::now()->subDays(30)));
+        $end = date('Y-m-d');
+        return Visitor::whereBetween('created_at', [$start . " 00:00:00", $end . " 23:59:59"])->select(
+            DB::raw('count as views'),
+            DB::raw('DATE(created_at) as day'),
+        )
+            ->orderBy('day')
+            ->get();
     }
 }

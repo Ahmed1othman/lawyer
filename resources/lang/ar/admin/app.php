@@ -122,4 +122,16 @@ return [
     'add_success'=>'تمت الاضافة بنجاح',
     'edit_success'=>'تم التعديل بنجاح',
 
+    'total_services'=>'اجمالي عدد الخدمات',
+    'total_projects'=>'اجمالي عدد المشروعات',
+    'total_visitors'=>'اجمالي عدد الزوار',
+    'total_features'=>'اجمالي عدد المميزات',
+    'total_news'=>'اجمالي عدد الاخبار',
+    'total_orders'=>'اجمالي عدد الطلبات',
+    'total_team'=>'اجمالي فريق العمل',
+    'total_contacts'=>'اجمالي جهات الاتصال',
+    'visitors_chart'=>'تحليل بياني للزيارات',
+
+
+
 ];

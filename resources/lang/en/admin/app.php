@@ -125,6 +125,17 @@ return [
     'documentation_en'=>'Documentation by English',
     'documentation_ar'=>'Documentation by Arabic',
 
+    'total_services'=>'Total services',
+    'total_projects'=>'Total projects',
+    'total_visitors'=>'Total visitors',
+    'total_features'=>'Total features',
+    'total_news'=>'Total news',
+    'total_orders'=>'Total orders',
+
+    'total_team'=>'Total team',
+    'visitors_chart'=>'Visitors Chart',
+    'total_contacts'=>'Total contacts',
+
 
 
 

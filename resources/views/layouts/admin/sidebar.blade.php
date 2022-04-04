@@ -29,7 +29,7 @@
             </a>
             <ul>
                 <li><a href="{{ route('Services.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.services') }}</a></li>
-
+                <li><a href="{{ route('clients.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.clients') }}</a></li>
 {{--                <li><a href="{{ route('features.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.features') }}</a></li>--}}
 
                 <li><a href="{{ route('AllOrders') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.orders') }}</a></li>
@@ -74,6 +74,7 @@
             <ul>
 
                 <li><a href="{{ route('services-deleted') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.services') }}</a></li>
+
 
 {{--                <li><a href="{{ route('feature-deleted') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.features') }}</a></li>--}}
 

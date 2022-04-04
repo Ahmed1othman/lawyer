@@ -5,9 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Repositories\Eloquent\ClientRepo;
 use App\Http\Requests\Admin\ClientRequest;
-use App\Http\Requests\Admin\ServiceRequest;
-use App\Models\feature;
-use App\Models\Service;
+use App\Models\Client;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -15,7 +13,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File as FacadesFile;
 
-class featuresController extends Controller
+class ClientController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -39,14 +37,14 @@ class featuresController extends Controller
     public function index()
     {
         $data = $this->repo->getAll();
-        $features = feature::all();
-        return view('admin.features.index', compact('data', 'features'));
+        $clients = Client::all();
+        return view('admin.clients.index', compact('data', 'clients'));
     }
 
     public function create()
     {
         try {
-            return view('admin.features.create');
+            return view('admin.clients.create');
         } catch (\Exception $e) {
             return redirect()->back()
                 ->with('error', __('app.some_thing_error'));
@@ -64,79 +62,51 @@ class featuresController extends Controller
     {
        try {
             $data = [
-                'title' => ['en' => $request->title, 'ar' => $request->title_ar],
-                'notes' => ['en' => $request->notes, 'ar' => $request->notes_ar]
+                'name' => ['en' => $request->name, 'ar' => $request->name_ar],
             ];
-            if ($request->active) {
-                $data['active'] = 1;
-            } else {
-                $data['active'] = 0;
-            }
-            $file = request()->file('photo');
 
+            $file = request()->file('photo');
             if ($file) {
-                $data['photo'] = $this->repo->storeFile($file, 'features');
+                $data['photo'] = $this->repo->storeFile($file, 'clients');
             }
 
             $this->repo->create($data);
-            session()->flash('Add', 'تم اضافه الميزه بنجاح ');
-            return redirect('features');
+            session()->flash('Add', 'تم اضافه العميل بنجاح ');
+            return redirect('clients');
        } catch (\Exception $e) {
            return redirect()->back()
                ->with('error', __('app.some_thing_error'));
        }
     }
 
-    /**
-     * update the Permission for dashboard.
-     *
-     * @param Request $request
-     * @return Builder|Model|object
-     */
+
     public function edit($slider)
     {
         try {
             $data = $this->repo->findOrFail($slider);
-            return view('admin.features.edit', compact('data'));
+            return view('admin.clients.edit', compact('data'));
         } catch (\Exception $e) {
             return redirect()->back()
                 ->with('error', __('app.some_thing_error'));
         }
     }
 
-
-    /**
-     * update a permission.
-     *
-     * @param Request $request
-     * @return JsonResponse
-     */
     public function update(ClientRequest $request, $id)
     {
 
         $item = $this->repo->findOrFail($request->id);
         try {
             $data = [
-                'title' => ['en' => $request->title, 'ar' => $request->title_ar],
-                'notes' => ['en' => $request->notes, 'ar' => $request->notes_ar]
+                'name' => ['en' => $request->name, 'ar' => $request->name_ar],
             ];
-            if ($request->active) {
-                $data['active'] = 1;
-            } else {
-                $data['active'] = 0;
-            }
-
             $file = request()->file('photo');
-
             if ($file) {
-                FacadesFile::delete('public/feature/' . $item->photo);
-                $data['photo'] = $this->repo->storeFile($file, 'features');
+                FacadesFile::delete('public/clients/' . $item->photo);
+                $data['photo'] = $this->repo->storeFile($file, 'clients');
             }
-
             $this->repo->update($data, $item);
-
-            session()->flash('Edit', 'تم تعديل الميزه بنجاح ');
-            return redirect('features');
+            session()->flash('Edit', 'تم تعديل العميل بنجاح ');
+            return redirect('clients');
         } catch (\Exception $e) {
             return redirect()->back()
                 ->with('error', __('app.some_thing_error'));
@@ -150,10 +120,10 @@ class featuresController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function destroy($features)
+    public function destroy($clients)
     {
-        $features = $this->repo->bulkDelete([$features]);
-        if (!$features) {
+        $clients = $this->repo->bulkDelete([$clients]);
+        if (!$clients) {
             return __('app.users.cannotdelete');
         }
         return 1;
@@ -161,7 +131,7 @@ class featuresController extends Controller
 
     public function deletedFeature()
     {
-        $features = feature::onlyTrashed()->get();
-        return view('admin.features.deleted', compact('features'));
+        $clients = Client::onlyTrashed()->get();
+        return view('admin.clients.deleted', compact('clients'));
     }
 }
