@@ -19,7 +19,9 @@ class CreateOrdersTable extends Migration
             $table->string('email')->nullable();
             $table->string('phone', 15)->nullable();
             $table->string('type');
-            $table->longText('msg')->nullable();;
+            $table->longText('msg')->nullable();
+            $table->longText('note')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

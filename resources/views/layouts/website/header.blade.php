@@ -5,9 +5,17 @@
 <link rel="stylesheet" href="{{ asset('website/css/owl.carousel.css')}}" type="text/css">
 <link rel="stylesheet" href="{{ asset('website/css/magnific-popup.css')}}" type="text/css">
 @if(App::isLocale('ar'))
-    <link rel="stylesheet" href="{{ asset('website/css/main-rtl.css')}}" type="text/css">
+    @if(websiteInfo_hlp('theme')!='light')
+        <link rel="stylesheet" href="{{ asset('website/css/main-rtl.css')}}" type="text/css">
+    @else
+        <link rel="stylesheet" href="{{ asset('website/css/main-light-4-rtl.css')}}" type="text/css">
+    @endif
 @else
-    <link rel="stylesheet" href="{{ asset('website/css/main.css')}}" type="text/css">
+    @if(websiteInfo_hlp('theme')!='light')
+        <link rel="stylesheet" href="{{ asset('website/css/main.css')}}" type="text/css">
+    @else
+        <link rel="stylesheet" href="{{ asset('website/css/main-light-4.css')}}" type="text/css">
+    @endif
 @endif
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,10 +31,10 @@
 <script src="{{ asset('website/js/modernizr.custom.js')}}"></script>
 
 
-{{--<link href="{{ websiteInfo_hlp('font_url') }}" rel="stylesheet">--}}
+<link href="{{ websiteInfo_hlp('font_url') }}" rel="stylesheet">
 
-
-<style>
+@if(websiteInfo_hlp('theme')!='light')
+    <style>
     .kit-overlay1 {
         background-position: center center;
         background-repeat: no-repeat;
@@ -53,7 +61,42 @@
         background-color: transparent!important;
     }
 </style>
+@else
+    <style>
+        .kit-overlay1 {
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .kit-overlay1::before {
+            opacity: 0.97;
+        }
 
+        .kit-overlay1::before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            /*background: #05233a;*/
+            background: #fff;
+        }
+
+        section{
+            background-color: transparent!important;
+        }
+
+        ul.main-menu {
+            width: 85px;
+        }
+        a {
+            color: {{ websiteInfo_hlp('main_font_color') }};
+        }
+    </style>
+@endif
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -195,3 +238,23 @@
 <link href="{{ asset('website/plugins/notifications/css/lobibox.min.css') }}" rel="stylesheet"/>
 
 <link rel="stylesheet" href="{{ asset('website/css/custom.css')}}" type="text/css">
+
+<style>
+    #logos{
+        position: absolute;
+        top: 30px;
+
+        {{App::getLocale()=='en'?'right: 30px;':'left: 30px;'}}
+        z-index: 1000;
+    }
+
+
+    .logo_image {
+        margin:5px;
+        width: 85px;
+        height: 85px;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+</style>

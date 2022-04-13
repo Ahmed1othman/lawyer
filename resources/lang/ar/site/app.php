@@ -2,8 +2,8 @@
 
 return [
 
-    'home' => 'الصفحة الرئيسية',
-    'Home' => 'الصفحة الرئيسية',
+    'home' => 'الرئيسية',
+    'Home' => 'الرئيسية',
     'open_marketing' => 'افتح التسويق',
     'sign_in' => 'تسجيل الدخول',
     'mazad' => 'مازاد',
@@ -57,9 +57,9 @@ return [
     'values'=>'قيمنا',
 
     'request_documentation_service'=>'طلب خدمة توثيق',
-    'Abdullah Al-Mansour Al-Shahrani'=>'عبد الله المنصور الشهراني',
+    'Abdullah Mansour'=>'عبد الله منصور',
     'documenter and legal advisor'=>'موثق ومستشار قانوني',
-    'For Law and Legal Consultations'=>'للمحاماه والاستشارات القانونية',
+    'For Law and Legal Consultations'=>'للمحاماة والاستشارات القانونية',
     'Providing documentation services'=>'وتقديم خدمات التوثيق',
     'our_team'=>'فريقنا',
     'our_clients'=>'عملائنا',
@@ -71,7 +71,7 @@ return [
     'request_documentation_service_now'=>'أطلب خدمة توثيق الآن',
 
     'name_is_required'=>'الإسم مطلوب',
-    'full_name'=>'الإسم بالكامل',
+    'full_name'=>'الإسم',
     'valid_email_is_required'=>'بريد الكتروني فعال مطلوب',
     'email'=>'البريد الالكتروني',
     'type_documentation__service_is_required'=>'نوع خدمة التوثيق مطلوبة',
@@ -99,5 +99,15 @@ return [
     'To contact and request legal advice'=>'للتواصل وطلب الاستشارات القانونية',
     'subject'=>'الموضوع',
     'subject_is_required'=>'الموضوع مطلوب',
+
+    'Lawyer\'s License'=>'ترخيص المحاماة',
+    'Authentication license'=>'ترخيص التوثيق',
+
+    'Request legal advice'=>'إستشارة قانونية',
+    'Leave your question now'=>'إترك استفسارك الان',
+
+    'legal_advice'=>'إستشارة قانونية',
+    'Leave your details and we will call you back'=>'اترك بياناتك وسنعاود الاتصال بك ',
+    'contact Us Naw'=>'تواصل معانا الان ',
 
 ];

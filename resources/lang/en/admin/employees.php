@@ -2,7 +2,7 @@
 
 return [
 
-    'employees' => 'employees',
+    'employees' => 'Employees',
     'employee_name_ar' => 'employee name Arabic',
     'employee_name' => 'employee name English',
     'Attachments_are_of_image_type_only' => 'Attachments are of image type only',

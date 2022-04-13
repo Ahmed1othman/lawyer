@@ -32,8 +32,6 @@
                 <li><a href="{{ route('clients.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.clients') }}</a></li>
 {{--                <li><a href="{{ route('features.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.features') }}</a></li>--}}
 
-                <li><a href="{{ route('AllOrders') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.orders') }}</a></li>
-
 {{--                <li><a href="{{ route('projects.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.projects') }}</a></li>--}}
 
                 <li><a href="{{ route('employees.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/employees.employees') }}</a></li>
@@ -44,7 +42,9 @@
 
 {{--                <li><a href="{{ route('navbar.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.navbar') }}</a></li>--}}
 {{--                <li><a href="{{ route('subscription.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.sbscriptions') }}</a></li>--}}
-                <li><a href="{{ route('contacts') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.contacts') }}</a></li>
+                <li><a href="{{ route('orders.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.orders') }}</a></li>
+                <li><a href="{{ route('advice-orders.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.advice-orders') }}</a></li>
+                <li><a href="{{ route('contact-us.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.contact-us') }}</a></li>
             </ul>
         </li>
 
@@ -74,6 +74,9 @@
             <ul>
 
                 <li><a href="{{ route('services-deleted') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.services') }}</a></li>
+                <li><a href="{{ route('orders-archived') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.orders') }}</a></li>
+                <li><a href="{{ route('advice-orders-archived') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.advice-orders') }}</a></li>
+                <li><a href="{{ route('contact-us-archived') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.contact-us') }}</a></li>
 
 
 {{--                <li><a href="{{ route('feature-deleted') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('admin/app.features') }}</a></li>--}}

@@ -54,7 +54,7 @@ return [
     'values'=>'Values',
 
     'request_documentation_service'=>'Request Documentation Service',
-    'Abdullah Al-Mansour Al-Shahrani'=>'Abdullah Al-Mansour Al-Shahrani',
+    'Abdullah Mansour'=>'Abdullah Mansour',
     'documenter and legal advisor'=>'documenter and legal advisor',
     'For Law and Legal Consultations'=>'For Law and Legal Consultations',
     'Providing documentation services'=>'Providing documentation services',
@@ -68,7 +68,7 @@ return [
     'request_documentation_service_now'=>'Request Documentation Service Now',
 
     'name_is_required'=>'Name Is Required',
-    'full_name'=>'Full Name',
+    'full_name'=>'Your Name',
     'valid_email_is_required'=>'Valid Email Is Required',
     'email'=>'Email',
     'type_documentation__service_is_required'=>'Type Of Documentation Service Is Required',
@@ -97,4 +97,12 @@ return [
     'To contact and request legal advice'=>'To Contact and Request Legal Advice',
     'subject'=>'Subject',
     'subject_is_required'=>'Subject is required',
+    'Lawyer\'s License'=>'Lawyer\'s License',
+    'Authentication license'=>'Authentication license',
+
+    'Request legal advice'=>'Request Legal Advice',
+    'Leave your question now'=>'Leave Your Question Now',
+    'legal_advice'=>'Legal Advice',
+    'Leave your details and we will call you back'=>'Leave your details and we will call you back ',
+    'contact Us Naw'=>'Contact Us Naw ',
 ];

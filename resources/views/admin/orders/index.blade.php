@@ -14,10 +14,9 @@
                             <tr>
                                 <th>#</th>
                                 <th>{{trans('admin/orders.name')}}</th>
-                                <th>{{trans('admin/orders.email')}}</th>
                                 <th>{{trans('admin/orders.phone')}}</th>
                                 <th>{{trans('admin/orders.service_type')}}</th>
-                                <th>{{trans('admin/orders.msg')}}</th>
+                                <th>{{trans('admin/orders.received_date')}}</th>
                                 <th>{{trans('admin/orders.Action')}}</th>
                             </tr>
                             </thead>
@@ -26,16 +25,12 @@
                                 <tr id="row_{{$row->id}}">
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$row->name}}</td>
-                                    <td>{{$row->email}}</td>
                                     <td>{{$row->phone}}</td>
                                     <td>{{$row->type}}</td>
-                                    <td>{{$row->msg}}</td>
+                                    <td>{{$row->created_at->diffForHumans()}}</td>
                                     <td>
-                                        <form action="{{route('deletedOrders')}}" method="post">
-                                            @csrf
-                                            <input type="hidden" name="id" value="{{$row->id}}">
-                                            <button class="btn btn-danger btn-sm waves-effect waves-light"><i class="bx bx-trash"></i></button>
-                                        </form>
+                                        <button type="button" class="btn btn-danger waves-effect waves-light btn-sm" onclick="delete_alert({{$row->id}},'orders')" ><i class="bx bx-archive-in"></i></button>
+                                        <a href="{{route('orders.show',$row->id)}}" class="btn btn-success btn-sm waves-effect waves-light"><i class="bx bx-show"></i></a>
                                     </td>
                             @endforeach
                             </tbody>

@@ -103,15 +103,8 @@ class ServiceController extends Controller
     }
 
 
-    /**
-     * update a permission.
-     *
-     * @param Request $request
-     * @return JsonResponse
-     */
     public function update(ServiceRequest $request, $id)
     {
-
         $item = $this->repo->findOrFail($request->id);
         try {
             $data = [
@@ -123,7 +116,6 @@ class ServiceController extends Controller
             } else {
                 $data['active'] = 0;
             }
-
             $file = request()->file('photo');
 
             if ($file) {
@@ -141,13 +133,6 @@ class ServiceController extends Controller
         }
     }
 
-
-    /**
-     * Delete more than one permission.
-     *
-     * @param Request $request
-     * @return JsonResponse
-     */
     public function destroy($service)
     {
         $services = $this->repo->bulkDelete([$service]);

@@ -20,11 +20,18 @@
     </li>
 
     <li>
-            <a href="#documentation" class="nav-anim">
-                <span class="menu-icon lnr lnr-book"></span>
-                <span class="link-text">{{__('site/app.documentation')}}</span>
-            </a>
-        </li>
+        <a href="#documentation" class="nav-anim">
+            <span class="menu-icon"> <i class="fas fa-fingerprint"></i></span>
+            <span class="link-text">{{__('site/app.documentation')}}</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="#legal_advice" class="nav-anim">
+            <span class="menu-icon"> <i class="fas fa-legal"></i></span>
+            <span class="link-text">{{__('site/app.legal_advice')}}</span>
+        </a>
+    </li>
 
 
 
@@ -52,5 +59,15 @@
             <span class="menu-icon lnr lnr-envelope"></span>
             <span class="link-text">{{__('site/app.contact_us')}}</span>
         </a>
+    </li>
+    <li>
+        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+            @if( LaravelLocalization::getCurrentLocaleNative() != $properties['native'] )
+            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                <span class="menu-icon lnr lnr-flag"></span>
+                <span class="link-text">{{ $properties['native'] }}</span>
+            </a>
+            @endif
+        @endforeach
     </li>
 </ul>

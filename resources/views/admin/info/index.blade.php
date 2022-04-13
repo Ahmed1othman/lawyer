@@ -53,6 +53,15 @@
                             </div>
                         </div>
 
+                        @elseif ($row->type=='select_theme')
+                            <div class="col-xl-8">
+                                <div class="form-group">
+                                    <select class="form-select" name="value">
+                                        <option {{$row->value=='light'?'selected':''}} selected value="light" >light theme</option>
+                                        <option {{$row->value=='dark'?'selected':''}} value="dark" >dark theme</option>
+                                    </select>
+                                </div>
+                            </div>
                         @elseif ($row->type=='color')
                             <div class="col-xl-8">
                                 <div class="form-group">

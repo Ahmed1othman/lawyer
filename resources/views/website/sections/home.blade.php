@@ -31,7 +31,7 @@
                         </div>
                         <div class="item">
                             <div class="sp-subtitle">
-                                <a href="#contact" class="btn btn-primary home_button">{{__('site/app.request_legal_advice')}}</a>
+                                <a href="#legal_advice" class="btn btn-primary home_button">{{__('site/app.request_legal_advice')}}</a>
                             </div>
                         </div>
                     </div>

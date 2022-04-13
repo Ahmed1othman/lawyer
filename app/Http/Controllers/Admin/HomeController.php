@@ -10,6 +10,7 @@ use App\Models\Visitor;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Ramsey\Uuid\Codec\OrderedTimeCodec;
 
 
 class HomeController extends Controller
@@ -27,10 +28,17 @@ class HomeController extends Controller
 
     public function AllOrders()
     {
-        $Orders = order::all();
-        return view('admin.orders.index', compact('Orders'));
 
     }
+
+    public function showOrder($id){
+
+    }
+
+    public function updateNote(Request $request){
+
+    }
+
     public function contacts()
     {
         $data = ContactUs::all();
@@ -40,9 +48,7 @@ class HomeController extends Controller
 
     public function deletedOrders(Request $request)
     {
-        order::destroy($request->id);
-        session()->flash('danger', 'تم الحذف بنجاح ');
-        return redirect()->route('AllOrders');
+
     }
     public function deleteddata(Request $request)
     {

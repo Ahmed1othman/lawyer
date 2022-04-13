@@ -13,8 +13,14 @@
                         <img src="{{asset('website/img/main_photo.jpg')}}" alt="عبد الله المنصور">
                     </div>
                     <div class="header-titles">
-                        <h3>{{__('site/app.Abdullah Al-Mansour Al-Shahrani')}}</h3>
+                        <h2>{{__('site/app.Abdullah Mansour')}}</h2>
                         <h4>{{__('site/app.documenter and legal advisor')}}</h4>
+                        <p>
+                            <strong class="d-block" style="color: #fff">{{__('site/app.Lawyer\'s License')}} : <ins>39548</ins></strong>
+                            <strong class="d-block" style="color: #fff">{{__('site/app.Authentication license')}} : <ins>401649</ins></strong>
+
+                        </p>
+
                     </div>
                 </div>
 
@@ -45,16 +51,10 @@
                     <a href="tel:{{ websiteInfo_hlp('phone') }}" target="_blank" class="btn btn-primary col-md-10"><i class="fa fa-phone custom-icon"></i> {{__('site/app.call_us')}}</a>
 
                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                        @if(LaravelLocalization::getCurrentLocaleNative()!=$properties['native'] )
                         <a rel="alternate" class="btn btn-primary col-md-5" style="" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                             {{ $properties['native'] }}
                         </a>
-
-                        @endif
                     @endforeach
-                        <a class="btn btn-primary col-md-5"  href="">
-                            {{__('Dark')}}
-                        </a>
                 </div>
 
                 @if(App::getLocale()=='en')
@@ -82,7 +82,9 @@
             <!-- End Arrows Nav -->
 
             <div class="content-area">
-                <div class="animated-sections kit-overlay1" style="background-image: url('{{asset('website/img/bg1.png')}}');">
+                <div class="animated-sections kit-overlay1" style="background-image: url('{{ asset('storage/front/' . websiteInfo_hlp('main_background')) }}');">
+
+                    @include('website.sections.logos')
                     <!-- Home Subpage -->
                     @include('website.sections.home')
                     <!-- End of Home Subpage -->
@@ -98,6 +100,10 @@
 
                     <!-- documentation Subpage -->
                     @include('website.sections.documentation')
+                    <!-- End of documentation Subpage -->
+
+                    <!-- request legal advice Subpage -->
+                    @include('website.sections.request_legal_advice')
                     <!-- End of documentation Subpage -->
 
                     <!-- Contact Subpage -->

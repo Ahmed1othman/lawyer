@@ -62,7 +62,7 @@ function request_service() {
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-            url: app_url + "/" + lang + "/orders",
+            url: app_url + "/" + lang + "/orders-request",
             type: 'POST',
             data: {
                 _token: $('meta[name="csrf-token"]').attr('content'),
@@ -98,8 +98,6 @@ function submitContactUs() {
     var contact_us_email = document.getElementById("contact_us_email");
     var contact_us_name = document.getElementById("contact_us_name");
     var contact_us_phone = document.getElementById("contact_us_phone");
-    var contact_us_msg = document.getElementById("contact_us_msg");
-    var contact_us_subject = document.getElementById("contact_us_subject");
 
     if (contact_us_name.value === '') {
         round_error_noti('You Need To Enter Name')
@@ -107,10 +105,6 @@ function submitContactUs() {
     }
     if (contact_us_phone.value === '') {
         round_error_noti('You Need To Enter Phone')
-        return;
-    }
-    if (contact_us_subject.value === '') {
-        round_error_noti('You Need To Enter Subject')
         return;
     }
     $.ajax({
@@ -124,8 +118,6 @@ function submitContactUs() {
             email: contact_us_email.value,
             name: contact_us_name.value,
             phone: contact_us_phone.value,
-            msg: contact_us_msg.value,
-            subject: contact_us_subject.value
         },
         async: false,
         success: function(data) {
@@ -137,8 +129,59 @@ function submitContactUs() {
                 contact_us_email.value = '';
                 contact_us_name.value = '';
                 contact_us_phone.value = '';
-                contact_us_msg.value = '';
-                contact_us_subject.value = '';
+            }
+        },
+        error: function(error) {
+            round_error_noti()
+        }
+    });
+}
+
+function submitLegalAdvice() {
+    var legal_advice_email = document.getElementById("legal_advice_email");
+    var legal_advice_name = document.getElementById("legal_advice_name");
+    var legal_advice_phone = document.getElementById("legal_advice_phone");
+    var legal_advice_msg = document.getElementById("legal_advice_msg");
+    var legal_advice_subject = document.getElementById("legal_advice_subject");
+
+    if (legal_advice_name.value === '') {
+        round_error_noti('You Need To Enter Name')
+        return;
+    }
+    if (legal_advice_phone.value === '') {
+        round_error_noti('You Need To Enter Phone')
+        return;
+    }
+    if (legal_advice_subject.value === '') {
+        round_error_noti('You Need To Enter Subject')
+        return;
+    }
+    $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: app_url + "/" + lang + "/request-legal-advice",
+        type: 'POST',
+        data: {
+            _token: $('meta[name="csrf-token"]').attr('content'),
+            email: legal_advice_email.value,
+            name: legal_advice_name.value,
+            phone: legal_advice_phone.value,
+            msg: legal_advice_msg.value,
+            subject: legal_advice_subject.value
+        },
+        async: false,
+        success: function(data) {
+            var obj = JSON.parse(data);
+            if (obj.code === 0) {
+                round_error_noti(obj.msg)
+            } else {
+                round_success_noti(obj.msg)
+                legal_advice_email.value = '';
+                legal_advice_name.value = '';
+                legal_advice_phone.value = '';
+                legal_advice_msg.value = '';
+                legal_advice_subject.value = '';
             }
         },
         error: function(error) {

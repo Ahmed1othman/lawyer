@@ -16,26 +16,13 @@ use Illuminate\Support\Facades\File as FacadesFile;
 
 class SliderController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+
     protected $repo;
-
-
-
     public function __construct(SliderRepo $repo)
     {
-
        $this->repo = $repo;
-
     }
-    /**
-     * Show the application dashboard.
-     *
-     * @return Renderable
-     */
+
     public function index()
     {
        $data=$this->repo->getAll();
@@ -47,12 +34,6 @@ class SliderController extends Controller
         return view('admin.sliders.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param Request $request
-     * @return JsonResponse
-     */
     public function store(SliderRequest $request)
     {
       try {
@@ -82,12 +63,6 @@ class SliderController extends Controller
         }
     }
 
-    /**
-     * update the Permission for dashboard.
-     *
-     * @param Request $request
-     * @return Builder|Model|object
-     */
     public function edit($slider)
     {
         $row=$this->repo->findOrFail($slider);
@@ -95,12 +70,6 @@ class SliderController extends Controller
         // return response()->json($data, 200);
     }
 
-    /**
-     * update a permission.
-     *
-     * @param Request $request
-     * @return JsonResponse
-     */
     public function update(SliderRequest $request,$id)
     {
 
@@ -136,13 +105,6 @@ class SliderController extends Controller
 
     }
 
-
-    /**
-     * Delete more than one permission.
-     *
-     * @param Request $request
-     * @return JsonResponse
-     */
     public function destroy($slider)
     {
         $sliders=$this->repo->bulkDelete([$slider]);

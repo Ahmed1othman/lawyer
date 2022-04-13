@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
+use App\Mail\Password;
+use App\Mail\RequestNotify;
+use App\Models\AdviceOrder;
 use App\Models\Client;
 use App\Models\ContactUs;
 use App\Models\Custom;
@@ -19,15 +22,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File as FacadesFile;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $slideroption=SliderOption::first();
@@ -35,8 +35,8 @@ class HomeController extends Controller
         if(!$slideroption){
             $slideroption=['word'=>'x:left','image'=>'slidingoverlayhorizontal'];
             SliderOption::create($slideroption);
+            SliderOption::create($slideroption);
             $slideroption=json_encode($slideroption);
-
         }
         $date = [
 //            'slideroption' => $slideroption,
@@ -90,11 +90,8 @@ class HomeController extends Controller
         $row = news::find($id);
         return view('website.news-details', compact('row'));
     }
-
-
     public function Orders(Request $request)
     {
-
         try {
             $orders = new order();
             $orders->name = $request->name;
@@ -105,6 +102,7 @@ class HomeController extends Controller
             $data = $orders->save();
             if ($data) {
                 $response = ['code' => 1, 'msg' => __('admin/app.your_data_send_successfully')];
+                $this->sentNotificationMail($orders,'هذا تنبيه بوجود طلب توثيق جديد',route('orders.show',$orders->id),'طلب خدمة توثيق جديد');
             } else {
                 $response = ['code' => 0, 'msg' => __('admin/app.some_thing_error')];
             }
@@ -114,13 +112,37 @@ class HomeController extends Controller
             $response = ['code' => 0, 'msg' => __('admin/app.some_thing_error')];
             return json_encode($response);
         }
-
     }
     public function contactus(Request $request)
     {
-
         try {
             $orders = new ContactUs();
+            $orders->name = $request->name;
+            $orders->email = $request->email;
+            $orders->phone = $request->phone;
+            $data = $orders->save();
+            if ($data) {
+                $response = ['code' => 1, 'msg' => __('admin/app.your_data_send_successfully')];
+                $this->sentNotificationMail($orders,'هذا تنبيه بوجود طلب معاودة اتصال جديد',route('contact-us.show',$orders->id),'طلب طلب معاودة اتصال جديد');
+
+            } else {
+                $response = ['code' => 0, 'msg' => __('admin/app.some_thing_error')];
+            }
+            return json_encode($response);
+
+        } catch (\Exception $e) {
+            DB::rollback();
+            $response = ['code' => 0, 'msg' => __('admin/app.some_thing_error')];
+            return json_encode($response);
+        }
+
+    }
+
+    public function orderAdvice(Request $request)
+    {
+
+        try {
+            $orders = new AdviceOrder();
             $orders->name = $request->name;
             $orders->email = $request->email;
             $orders->phone = $request->phone;
@@ -129,10 +151,13 @@ class HomeController extends Controller
             $data = $orders->save();
             if ($data) {
                 $response = ['code' => 1, 'msg' => __('admin/app.your_data_send_successfully')];
+                $this->sentNotificationMail($orders,'هذا تنبيه بوجود طلب استشارة قانونية جديد',route('advice-orders.show',$orders->id),'طلب استشارة قانونية جديد');
+
             } else {
                 $response = ['code' => 0, 'msg' => __('admin/app.some_thing_error')];
             }
             return json_encode($response);
+
         } catch (\Exception $e) {
             DB::rollback();
             $response = ['code' => 0, 'msg' => __('admin/app.some_thing_error')];
@@ -140,8 +165,6 @@ class HomeController extends Controller
         }
 
     }
-
-
 
 
     public function subscription(Request $request)
@@ -188,15 +211,30 @@ class HomeController extends Controller
 
 
     public function downloadPdf(){
-//        try {
+        try {
             $pdf = websiteInfo_hlp('portfolio_pdf');
             if ($pdf){
                 //return Storage::disk('public')->download('front/'.$pdf,websiteInfo_hlp('website_name_en')."_cv",[],'inline');
                 return response()->file(storage_path().'/public/front/'.$pdf);
             }
-//            }catch (\Exception $e){
-//
-//            }
+            }catch (\Exception $e){
+
+            }
 
     }
+
+    public function sentNotificationMail($data,$message,$url,$subject){
+        if(websiteInfo_hlp('notifications_email')){
+            $email_details = [];
+            $email_details['message'] = $message;
+            $email_details['data'] = $data;
+            $email_details['url'] = $url;
+            $email_details['subject'] = $subject;
+            Mail::to(websiteInfo_hlp('notifications_email'))->send(new RequestNotify($email_details));
+            return 'done';
+        }
+    }
+
+
+
 }

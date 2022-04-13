@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+  'home'=>'الرئيسية',
   'title' => 'عنوان',
   'text' => 'نص',
   'active' => 'نشيط',
@@ -21,6 +21,7 @@ return [
   'portfolio_pdf' => 'برشور الموقع',
   'contact_image' => 'خلفية صفحة اتصل بنا',
   'email' => 'بريد الالكتروني',
+  'notifications_email' => 'ايميل استقبال التنبيهات',
   'phone' => 'هاتف',
   'address' => 'عنوان',
   'fb_link' => 'رابط الفيسبوك',
@@ -34,7 +35,7 @@ return [
   'some_thing_error' => ' يوجد خطأ ما ',
   'contact_info' => 'معلومات الاتصال',
   'control_front' => ' تحكم الموقع',
-  'contact_us' => 'اتصل بنا',
+  'contact_us' => 'طلبات معاودة الاتصال',
   'news' => 'الإخبارية',
   'projects' => 'المشاريع',
   'slider' => 'سليدر',
@@ -62,8 +63,11 @@ return [
     'your_email_send_successfully' => 'تم ارسال بريدك الالكتروني بنجاح',
     'your_data_send_successfully' => 'تم ارسال بياناتك بنجاح',
     'contacts' => 'جهات الاتصال',
+    'contact-us' => 'طلبات معاودة الاتصال',
     'message' => 'رسالة',
-    'orders' => 'الطلبات',
+    'subject' => 'الموضوع',
+    'orders' => 'طلبات التوثيق',
+    'advice-orders' => 'طلبات الاستشارة القانونية',
     'features' => 'المميزات',
     'archive' => 'الارشيف',
     'footer_image' => 'خلفية الـFooter ',
@@ -131,7 +135,8 @@ return [
     'total_team'=>'اجمالي فريق العمل',
     'total_contacts'=>'اجمالي جهات الاتصال',
     'visitors_chart'=>'تحليل بياني للزيارات',
-
-
-
+    'clients' => 'العملاء',
+    'msg' => 'الرسالة',
+    'save_note' => 'حفظ الملاحظات',
+    'favicon' => 'ايقونة صغيرة',
 ];

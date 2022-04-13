@@ -102,7 +102,7 @@ var PageTransitions = (function ($, options) {
     function getActiveSection() {
         if(location.hash === "") {
             return location.hash = $('section.animated-section').first().attr('data-id');
-        } 
+        }
         else {
             return location.hash;
         }
@@ -116,7 +116,7 @@ var PageTransitions = (function ($, options) {
         var navLink = $(item);
         navLink = navLink['0'];
         navLink = $(navLink);
-            
+
         if(navLink) {
             $('ul.main-menu a').removeClass('active');
             navLink.addClass('active');
@@ -469,7 +469,7 @@ var PageTransitions = (function ($, options) {
             currentPageId = $pageWrapper.data('current'), tempPageIndex,
             linkhref = $pageTrigger.attr('href').split("#"),
             gotoPage = linkhref[1];
-            
+
             tempPageIndex = currentPageId;
 
             // Current page to be removed.

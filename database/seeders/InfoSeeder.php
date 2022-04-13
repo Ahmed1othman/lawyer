@@ -18,10 +18,11 @@ class InfoSeeder extends Seeder
     {
         DB::table('infos')->delete();
         DB::table('slider_options')->delete();
-        Info::create(['option' => 'website_name_en','value' => 'Ahmed Othman','type' => 'string']);
-        Info::create(['option' => 'website_name_ar','value' => 'أحمد عثمان','type' => 'string']);
+        Info::create(['option' => 'website_name_en','value' => 'Abd-Allah Mansour','type' => 'string']);
+        Info::create(['option' => 'website_name_ar','value' => 'عبدالله منصور','type' => 'string']);
         Info::create(['option' => 'logo_en','value' => 'logo.png','type' => 'image']);
         Info::create(['option' => 'logo_ar','value' => 'logo.png','type' => 'image']);
+        Info::create(['option' => 'favicon','value' => 'logo.png','type' => 'image']);
         Info::create(['option' => 'show_logo','value' => true,'type' => 'checkbox']);
         Info::create(['option' => 'portfolio_pdf','value' => 'portfolio.pdf','type' => 'pdf']);
         Info::create(['option' => 'main_background','value' => 'background.png','type' => 'image']);
@@ -32,7 +33,8 @@ class InfoSeeder extends Seeder
 //        Info::create(['option' => 'news_image','value' => 'news.png','type' => 'image']);
 //        Info::create(['option' => 'footer_image','value' => 'footer.png','type' => 'image']);
 //        Info::create(['option' => 'contact_image','value' => 'contact.png','type' => 'image']);
-        Info::create(['option' => 'email','value' => 'email@email.com','type' => 'string']);
+        Info::create(['option' => 'email','value' => 'othmanahmed865@gmail.com','type' => 'string']);
+        Info::create(['option' => 'notifications_email','value' => 'othmanahmed865@gmail.com','type' => 'string']);
         Info::create(['option' => 'phone','value' => '0100000000','type' => 'string']);
         Info::create(['option' => 'whats_up','value' => '','type' => 'string']);
         Info::create(['option' => 'address_en','value' => 'Cairo, Egypt','type' => 'string']);
@@ -60,6 +62,7 @@ class InfoSeeder extends Seeder
         Info::create(['option' => 'documentation_en','value' => 'بلااااابلااااابلااااامن نحن بلااااا ','type' => 'text']);
         Info::create(['option' => 'documentation_ar','value' => 'بلااااابلااااابلااااامن نحن بلااااا ','type' => 'text']);
 
+        Info::create(['option' => 'theme','value' => 'light','type' => 'select_theme']);
         Info::create(['option' => 'main_color','value' => '#e0cd1d','type' => 'color']);
 //        Info::create(['option' => 'secondary_color','value' => '#e0cd1d','type' => 'color']);
         Info::create(['option' => 'main_font_color','value' => '#e0cd1d','type' => 'color']);

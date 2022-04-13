@@ -29,7 +29,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     ################## End Route Get profile ###########################
 
     ################## Start Route Get orders ###########################
-    Route::post('/orders', [HomeController::class, 'Orders'])->name('orders');
+    Route::post('/orders-request', [HomeController::class, 'Orders'])->name('orders-request');
+    ################## End Route Get orders ###########################
+
+    ################## Start Route Get orders ###########################
+    Route::post('/request-legal-advice', [HomeController::class, 'orderAdvice'])->name('request-legal-advice');
     ################## End Route Get orders ###########################
 
     ################## Start Route Get about-us ###########################

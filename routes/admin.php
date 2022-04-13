@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AdviceOrderController;
+use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\CustomController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\ClientController;
@@ -9,6 +11,7 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\InfoController;
 use App\Http\Controllers\Admin\NavBarController;
 use App\Http\Controllers\Admin\newsController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PageSectionController;
 use App\Http\Controllers\Admin\ProjectsController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -38,10 +41,19 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['au
     Route::get('/slider-option', [HomeController::class, 'showsliderOption'])->name('slider-option');
     Route::get('/update-slider-option', [HomeController::class, 'updatesliderOption'])->name('update-slider-option');
     Route::post('/save-slider-option', [HomeController::class, 'savesliderOption'])->name('save-slider-option');
-    Route::get('/contacts', [HomeController::class, 'contacts'])->name('contacts');
-    Route::get('/all-orders', [HomeController::class, 'AllOrders'])->name('AllOrders');
-    Route::post('/deleted-orders', [HomeController::class, 'deletedOrders'])->name('deletedOrders');
-    Route::post('/deleted-contacts', [HomeController::class, 'deleteddata'])->name('deleteddata');
+    ###################### Start Routes orders  ######################
+    Route::resource('orders',OrderController::class);
+    Route::get('archive/orders', [OrderController::class,'deleted'])->name('orders-archived');
+    ###################### End Routes orders  ######################
+
+    ###################### Start Routes orders  ######################
+    Route::resource('advice-orders',AdviceOrderController::class);
+    Route::get('archive/advice-orders', [AdviceOrderController::class,'deleted'])->name('advice-orders-archived');
+    ###################### End Routes orders  ######################
+
+    ###################### Start Routes orders  ######################
+    Route::resource('contact-us',ContactUsController::class);
+    Route::get('archive/contact-us', [ContactUsController::class,'deleted'])->name('contact-us-archived');
     ###################### End Routes orders  ######################
 
     Route::resource('custom-page', CustomController::class);
@@ -55,6 +67,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['au
     ###################### Start Routes Restore  ######################
 
     Route::post('restor-Services/{id}', [ServiceController::class,'restor'])->name('restor-service');
+    Route::post('restor-orders/{id}', [OrderController::class,'restor'])->name('restor-order');
+    Route::post('restor-advice-orders/{id}', [AdviceOrderController::class,'restor'])->name('restor-advice-order');
+    Route::post('restor-contact-us/{id}', [ContactUsController::class,'restor'])->name('restor-contact-us');
     Route::post('restor-features/{id}', [ClientController::class,'restor'])->name('restor-features');
     Route::post('restor-projects/{id}', [ProjectsController::class,'restor'])->name('restor-projects');
     Route::post('restor-employees/{id}', [EmployeeController::class,'restor'])->name('restor-employees');

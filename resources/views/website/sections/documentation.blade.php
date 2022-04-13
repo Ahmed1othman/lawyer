@@ -50,7 +50,7 @@
                                 </div>
 
                                 <div class="form-group form-group-with-icon">
-                                    <select id="contact_type" style="background-color: #2e2e2e;padding: 2px 12px 2px 25px;" name="type" class="form-control"  required="required" data-error="{{__('site/app.type_documentation__service_is_required')}}">
+                                    <select id="contact_type" @if(websiteInfo_hlp('theme')=='dark') style="background-color: #2e2e2e; padding: 2px 12px 2px 25px;" @else style="padding: 2px 12px 2px 25px;" @endif name="type" class="form-control"  required="required" data-error="{{__('site/app.type_documentation__service_is_required')}}">
                                         <option value="" disabled selected>{{__('site/app.select_type_documentation_service')}} <span style="color: red!important;">*</span></option>
                                         <option value="{{__('site/app.documentation_agencies')}}">{{__('site/app.documentation_agencies')}}</option>
                                         <option value="{{__('site/app.Dissolution of agencies')}}">{{__('site/app.Dissolution of agencies')}}</option>

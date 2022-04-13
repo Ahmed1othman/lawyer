@@ -12,11 +12,8 @@
                           enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
-
                         <input type="hidden" name="id" value="{{ $data->id }}">
-
                         <div class="row">
-
                             <div class="col">
                                 <label class="mb-2">{{ trans('admin/features.feature_name') }}</label>
                                 <input type="text" name="title"
@@ -26,7 +23,6 @@
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-
 
                             <div class="col">
                                 <label class="mb-2">{{ trans('admin/features.feature_name_ar') }}</label>
@@ -40,7 +36,6 @@
                             </div>
 
                             <br>
-
 
                             <div class="row">
                                 <div class="col">
@@ -102,6 +97,7 @@
                                     <button class="btn btn-success">{{ trans('admin/features.Edit_feature') }}</button>
                                 </div>
                             </div>
+                        </div>
                     </form>
                 </div>
             </div>
