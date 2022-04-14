@@ -88,10 +88,12 @@
         section{
             background-color: transparent!important;
         }
-
-        ul.main-menu {
-            width: 85px;
+        @media only screen and (min-width: 1025px){
+            ul.main-menu {
+                width: 85px;
+            }
         }
+
         a {
             color: {{ websiteInfo_hlp('main_font_color') }};
         }

@@ -1,7 +1,7 @@
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{ asset('storage/front/' . websiteInfo_hlp('logo')) }}" class="logo-icon" alt="logo icon">
+            <img src="{{ asset('storage/front/' . websiteInfo_hlp('logo_'.App::getLocale())) }}" class="logo-icon" alt="logo icon">
         </div>
         <div>
             <h4 class="logo-text">{{ websiteInfo_hlp('website_name') }}</h4>

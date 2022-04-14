@@ -85,5 +85,3 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/pdf',[HomeController::class , 'downloadPdf' ])->name('downloadPdf');
 });
 
-
-Route::get("users",[effects::class,"list"]);

@@ -60,14 +60,4 @@
             <span class="link-text">{{__('site/app.contact_us')}}</span>
         </a>
     </li>
-    <li>
-        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-            @if( LaravelLocalization::getCurrentLocaleNative() != $properties['native'] )
-            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                <span class="menu-icon lnr lnr-flag"></span>
-                <span class="link-text">{{ $properties['native'] }}</span>
-            </a>
-            @endif
-        @endforeach
-    </li>
 </ul>

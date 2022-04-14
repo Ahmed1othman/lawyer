@@ -141,5 +141,6 @@ return [
     'visitors_chart'=>'Visitors Chart',
     'total_contacts'=>'Total contacts',
     'favicon'=>'Favicon',
+    'notes' => 'Notes',
 
 ];
