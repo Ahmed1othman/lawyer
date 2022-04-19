@@ -7,7 +7,6 @@
     <div class="page-content">
         @include('message')
         <div class="card">
-
             <div class="card-body">
 
                 @foreach ($data as $row)

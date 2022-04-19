@@ -20,6 +20,11 @@ class InfoSeeder extends Seeder
         DB::table('slider_options')->delete();
         Info::create(['option' => 'website_name_en','value' => 'Abd-Allah Mansour','type' => 'string']);
         Info::create(['option' => 'website_name_ar','value' => 'عبدالله منصور','type' => 'string']);
+        Info::create(['option' => 'lawyer_name_ar','value' => 'عبدالله منصور','type' => 'string']);
+        Info::create(['option' => 'lawyer_name_en','value' => 'عبدالله منصور','type' => 'string']);
+        Info::create(['option' => 'lawyer_title_ar','value' => 'موثق ومستشار قانوني','type' => 'string']);
+        Info::create(['option' => 'lawyer_title_en','value' => 'Notarized and legal advisor','type' => 'string']);
+        Info::create(['option' => 'lawyer_photo','value' => 'lawyer.photo','type' => 'image']);
         Info::create(['option' => 'logo_en','value' => 'logo.png','type' => 'image']);
         Info::create(['option' => 'logo_ar','value' => 'logo.png','type' => 'image']);
         Info::create(['option' => 'favicon','value' => 'logo.png','type' => 'image']);

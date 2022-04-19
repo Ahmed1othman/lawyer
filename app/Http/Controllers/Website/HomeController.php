@@ -123,7 +123,7 @@ class HomeController extends Controller
             $data = $orders->save();
             if ($data) {
                 $response = ['code' => 1, 'msg' => __('admin/app.your_data_send_successfully')];
-                $this->sentNotificationMail($orders,'هذا تنبيه بوجود طلب معاودة اتصال جديد',route('contact-us.show',$orders->id),'طلب طلب معاودة اتصال جديد');
+                $this->sentNotificationMail($orders,'هذا تنبيه بوجود طلب معاودة اتصال جديد',route('contact-us.show',$orders->id),'طلب معاودة اتصال جديد');
 
             } else {
                 $response = ['code' => 0, 'msg' => __('admin/app.some_thing_error')];

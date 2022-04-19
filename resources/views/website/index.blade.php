@@ -10,11 +10,11 @@
             <header id="site_header" class="header mobile-menu-hide">
                 <div class="header-content">
                     <div class="header-photo">
-                        <img src="{{asset('website/img/main_photo.jpg')}}" alt="عبد الله المنصور">
+                        <img src="{{asset('storage/front/'.websiteInfo_hlp('lawyer_photo'))}}" alt="عبد الله المنصور">
                     </div>
                     <div class="header-titles">
-                        <h2>{{__('site/app.Abdullah Mansour')}}</h2>
-                        <h4>{{__('site/app.documenter and legal advisor')}}</h4>
+                        <h2>{{websiteInfo_hlp('lawyer_name_'.App::getLocale())}}</h2>
+                        <h4>{{websiteInfo_hlp('lawyer_title_'.App::getLocale())}}</h4>
                         <p>
                             <strong class="d-block" style="color: #fff">{{__('site/app.Lawyer\'s License')}} : <ins>39548</ins></strong>
                             <strong class="d-block" style="color: #fff">{{__('site/app.Authentication license')}} : <ins>401649</ins></strong>
@@ -78,6 +78,18 @@
             <div class="lmpixels-arrows-nav">
                 <div class="lmpixels-arrow-right"><i class="lnr lnr-chevron-right"></i></div>
                 <div class="lmpixels-arrow-left"><i class="lnr lnr-chevron-left"></i></div>
+            </div>
+            <!-- End Arrows Nav -->
+
+            <!-- Arrows Nav -->
+            <div id="languages">
+                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                    @if($properties['native'] != LaravelLocalization::getCurrentLocaleNative() )
+                        <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            {{ $properties['native'] }}
+                        </a>
+                    @endif
+                @endforeach
             </div>
             <!-- End Arrows Nav -->
 
