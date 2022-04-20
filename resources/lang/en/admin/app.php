@@ -143,4 +143,11 @@ return [
     'favicon'=>'Favicon',
     'notes' => 'Notes',
 
+    'lawyer_name_en' => 'English Lawyer Name',
+    'lawyer_name_ar' => 'Arabic Lawyer Name',
+    'lawyer_title_en' => 'English Lawyer Title',
+    'lawyer_title_ar' => 'Arabic Lawyer Title',
+    'lawyer_photo' => 'Lawyer Photo',
+    'theme' => 'Theme',
+
 ];
